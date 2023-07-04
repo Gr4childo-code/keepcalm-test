@@ -1,0 +1,53 @@
+@import '@/styles/grid.scss';
+
+.header {
+  position: sticky;
+  background: var(--backgroudLiner);
+  padding: 10px 0;
+  margin-bottom: 300px;
+  &__wrapper {
+    padding: 0 220px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  &__logo {
+    display: flex;
+    gap: 6px;
+    &__word {
+      width: 94px;
+    }
+    &__icon {
+      width: 20px;
+      height: 20px;
+    }
+  }
+  &__phone {
+    &__icon {
+      display: none;
+    }
+    &__text {
+      font-family: 'Manrope', sans-serif;
+      font-size: 24px;
+      font-weight: 500;
+    }
+  }
+}
+
+@include mq(Lphone) {
+  .header {
+    margin-bottom: 72px;
+    &__wrapper {
+      gap: 0;
+      padding: 0 40px;
+    }
+    &__phone {
+      &__icon {
+        display: block;
+      }
+      &__text {
+        display: none;
+      }
+    }
+  }
+}

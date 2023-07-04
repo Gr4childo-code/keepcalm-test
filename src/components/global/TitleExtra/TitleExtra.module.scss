@@ -1,0 +1,27 @@
+@import '@/styles/grid.scss';
+.titleExtra {
+  color: #141414;
+  padding-right: 260px;
+  @font-face {
+    font-family: 'OrchideaProMedium';
+    src: url('../../../fonts/OrchideaProMedium/OrchideaProMedium.ttf');
+    font-style: normal;
+    font-weight: 500;
+  }
+
+  font-family: 'OrchideaProMedium';
+  text-transform: uppercase;
+  font-size: 48px;
+  line-height: 130%;
+  text-align: center;
+  margin-bottom: 64px;
+}
+
+@include mq(Lphone) {
+  .titleExtra {
+    font-size: 24px;
+    max-width: 250px;
+    padding: 0 20px 0 20px;
+    text-align: left;
+  }
+}

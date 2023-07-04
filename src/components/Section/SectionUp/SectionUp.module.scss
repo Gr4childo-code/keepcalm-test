@@ -1,0 +1,62 @@
+@import '@/styles/grid.scss';
+.wrapper {
+  display: flex;
+  align-items: center;
+  gap: 130px;
+  margin-bottom: 100px;
+}
+.img {
+  width: 900px;
+  height: 480px;
+  object-fit: cover;
+}
+
+.block {
+  max-width: 600px;
+  display: flex;
+  flex-direction: column;
+  &__text {
+    font-family: 'Manrope', sans-serif;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 180%;
+  }
+  &__title {
+    @font-face {
+      font-family: 'OrchideaProMedium';
+      src: url('../../../fonts/OrchideaProMedium/OrchideaProMedium.ttf');
+      font-style: normal;
+      font-weight: 500;
+    }
+    font-family: 'OrchideaProMedium';
+    font-size: 48px;
+    line-height: 110%;
+  }
+}
+
+@include mq(Lphone) {
+  .wrapper {
+    flex-direction: column;
+    margin-bottom: 50px;
+    gap: 0;
+  }
+  .img {
+    width: 100%;
+    height: 370px;
+    padding-bottom: 40px;
+  }
+  .block {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    &__title {
+      font-size: 24px;
+      margin: 0;
+    }
+    &__text {
+      font-size: 14px;
+      margin: 10px 0;
+    }
+  }
+}

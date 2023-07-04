@@ -1,0 +1,76 @@
+@import '@/styles/grid.scss';
+.scroll {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+
+  &__item {
+    position: relative;
+    height: 490px;
+    width: 320px;
+    margin-right: 40px;
+    flex-shrink: 0;
+  }
+
+  &__image {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+
+  &__container {
+    position: relative;
+    height: 100%;
+    padding: 0 0 0 25px;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: flex-start;
+    align-items: center;
+  }
+}
+
+.horizontal_scroll {
+  position: relative;
+  width: 100%;
+
+  &__sticky_container {
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    width: 100%;
+    overflow-x: hidden;
+    &__inner {
+      position: relative;
+      p {
+        left: 100px;
+        position: absolute;
+        align-items: center;
+      }
+    }
+  }
+
+  &__translate_container {
+    position: absolute;
+    height: 100%;
+    will-change: transform;
+  }
+}
+@media screen and (min-width: 1600px) {
+  .scroll {
+    &__container {
+      padding: 0 0 0 250px;
+    }
+  }
+}
+
+@include mq(Lphone) {
+  .horizontal_scroll {
+    &__sticky_container {
+      &__inner {
+        p {
+          left: 0;
+        }
+      }
+    }
+  }
+}
